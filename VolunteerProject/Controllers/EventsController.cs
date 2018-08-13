@@ -74,14 +74,14 @@ namespace VolunteerProject.Controllers
 		}
 		[HttpPost]
 		[ActionName("AddVolunteer")]
-		public JsonResponse AddVolunteer(User user, Event @event) {
-			if (user == null || @event==null)
+		public JsonResponse AddVolunteer(int? id,User user) {
+			if (user == null || id==null)
 				return new JsonResponse { Error = "null", Message = "Null user", Result = "Failed" };
 			if (!ModelState.IsValid)
 				return new JsonResponse { Error = "not valid", Message = "non valid user", Result = "failed" };
 			if (user.IsVolunteer == false || user.IsAdmin == false)
 				return new JsonResponse { Error = "is not a volunteer", Message = "not accessible to public users", Result = "failed" };
-			Event e = db.Events.Find(@event);
+			Event e = db.Events.Find(id);
 			var users = e.Volunteers;
 			users.Add(user);
 			db.SaveChanges();
@@ -90,13 +90,13 @@ namespace VolunteerProject.Controllers
 
 		[HttpPost]
 		[ActionName("AddAttenace")]
-		public JsonResponse AddAttendance(User user, Event @event)
+		public JsonResponse AddAttendance(int? id,User user)
 		{
-			if (user == null || @event == null)
+			if (user == null || id == null)
 				return new JsonResponse { Error = "null", Message = "Null user", Result = "Failed" };
 			if (!ModelState.IsValid)
 				return new JsonResponse { Error = "not valid", Message = "non valid user", Result = "failed" };
-			Event e = db.Events.Find(@event);
+			Event e = db.Events.Find(id);
 			var attendance = e.Attendance;
 			attendance.Add(user);
 			db.SaveChanges();
