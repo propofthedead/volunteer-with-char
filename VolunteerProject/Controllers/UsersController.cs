@@ -56,7 +56,6 @@ namespace VolunteerProject.Controllers
 			u.Password = user.Password;
 			u.Username = user.Username;
 			u.IsAdmin = user.IsAdmin;
-			u.IsVolunteer = user.IsVolunteer;
 			u.Hours = user.Hours;
 			u.Phone = user.Phone;
 			db.SaveChanges();

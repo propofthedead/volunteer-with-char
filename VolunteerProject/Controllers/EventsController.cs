@@ -79,8 +79,7 @@ namespace VolunteerProject.Controllers
 				return new JsonResponse { Error = "null", Message = "Null user", Result = "Failed" };
 			if (!ModelState.IsValid)
 				return new JsonResponse { Error = "not valid", Message = "non valid user", Result = "failed" };
-			if (user.IsVolunteer == false || user.IsAdmin == false)
-				return new JsonResponse { Error = "is not a volunteer", Message = "not accessible to public users", Result = "failed" };
+			
 			Event e = db.Events.Find(id);
 			var users = e.Volunteers;
 			users.Add(user);
