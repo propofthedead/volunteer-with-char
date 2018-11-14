@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201808021758151_user.Designer.cs">
       <DependentUpon>201808021758151_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811140029218_Removed forum.cs" />
+    <Compile Include="Migrations\201811140029218_Removed forum.Designer.cs">
+      <DependentUpon>201811140029218_Removed forum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\Event.cs" />
@@ -313,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808021758151_user.resx">
       <DependentUpon>201808021758151_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811140029218_Removed forum.resx">
+      <DependentUpon>201811140029218_Removed forum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
